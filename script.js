@@ -26,10 +26,10 @@ function downloadImage(url) {
             errorDiv.innerHTML = "";
             output.innerHTML = "";
 
-            const imagePromises = imageUrls.map(url => downloadImage(url));
+            const imagePromises = images.map(url => downloadImage(url));
 
             Promise.all(imagePromises)
-                .then(images => {
+                .then(image => {
                     // Hide loading spinner
                     loadingDiv.style.display = "none";
 
@@ -45,4 +45,4 @@ function downloadImage(url) {
                 });
         }
 
-        downloadImages();
+    
